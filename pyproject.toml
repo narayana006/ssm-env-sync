@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ssm-env-sync"
+version = "0.1.0"
+description = "Diff, pull and push between .env files and AWS Systems Manager Parameter Store, dry-run first."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Narayana Vemburaj" }]
+dependencies = ["boto3>=1.28"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "moto[ssm]>=5"]
+
+[project.scripts]
+ssm-env-sync = "ssm_env_sync.cli:main"
+
+[tool.setuptools]
+packages = ["ssm_env_sync"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
