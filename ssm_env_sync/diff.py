@@ -65,10 +65,3 @@ def count(entries: list[Entry]) -> dict[str, int]:
     for entry in entries:
         totals[entry.status] += 1
     return totals
-
-
-def display(value: str | None, entry: Entry, show_values: bool) -> str:
-    """Render a value for the terminal. SecureString values are always masked."""
-    if entry.is_secure or not show_values or value is None:
-        return MASK
-    return repr(value)
