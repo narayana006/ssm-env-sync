@@ -1,0 +1,39 @@
+{
+  "Parameters": [
+    {
+      "Name": "/myapp/prod/APP_NAME",
+      "Type": "String",
+      "Value": "orders-api",
+      "Version": 1,
+      "ARN": "arn:aws:ssm:us-east-1:123456789012:parameter/myapp/prod/APP_NAME"
+    },
+    {
+      "Name": "/myapp/prod/LOG_LEVEL",
+      "Type": "String",
+      "Value": "info",
+      "Version": 3,
+      "ARN": "arn:aws:ssm:us-east-1:123456789012:parameter/myapp/prod/LOG_LEVEL"
+    },
+    {
+      "Name": "/myapp/prod/MAX_WORKERS",
+      "Type": "String",
+      "Value": "8",
+      "Version": 1,
+      "ARN": "arn:aws:ssm:us-east-1:123456789012:parameter/myapp/prod/MAX_WORKERS"
+    },
+    {
+      "Name": "/myapp/prod/DB_PASSWORD",
+      "Type": "SecureString",
+      "Value": "placeholder-old-db-password",
+      "Version": 2,
+      "ARN": "arn:aws:ssm:us-east-1:123456789012:parameter/myapp/prod/DB_PASSWORD"
+    },
+    {
+      "Name": "/myapp/prod/LEGACY_QUEUE_NAME",
+      "Type": "String",
+      "Value": "orders-v1",
+      "Version": 1,
+      "ARN": "arn:aws:ssm:us-east-1:123456789012:parameter/myapp/prod/LEGACY_QUEUE_NAME"
+    }
+  ]
+}
