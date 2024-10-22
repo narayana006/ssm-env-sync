@@ -18,6 +18,8 @@ os.environ.update(
     AWS_SECRET_ACCESS_KEY="testing",
     AWS_SESSION_TOKEN="testing",
     AWS_DEFAULT_REGION="us-east-1",
+    AWS_SHARED_CREDENTIALS_FILE=os.devnull,  # ignore any real profiles on this machine
+    AWS_CONFIG_FILE=os.devnull,
 )
 os.environ.pop("AWS_PROFILE", None)
 
