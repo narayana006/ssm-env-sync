@@ -18,13 +18,13 @@ The repository ships an example `.env` file and an example export of a parameter
 
 ```bash
 git clone https://github.com/narayana006/ssm-env-sync && cd ssm-env-sync
-ssm-env-sync diff --path /myapp/prod --file examples/prod.env --from-file examples/parameters.json
+ssm-env-sync diff --path /myapp/prod --file examples/prod.env.example --from-file examples/parameters.json
 ```
 
 Output of that command (run against the example files, no AWS involved):
 
 ```
-/myapp/prod in examples/parameters.json (saved export)  vs  examples/prod.env
+/myapp/prod in examples/parameters.json (saved export)  vs  examples/prod.env.example
   ~  DB_PASSWORD           SecureString  differs
   +  FEATURE_NEW_CHECKOUT  String        only in file
   -  LEGACY_QUEUE_NAME     String        only in Parameter Store
@@ -38,7 +38,7 @@ Output of that command (run against the example files, no AWS involved):
 Add `--show-values --all` to see non-secret values and the keys that match. SecureString values stay masked:
 
 ```
-/myapp/prod in examples/parameters.json (saved export)  vs  examples/prod.env
+/myapp/prod in examples/parameters.json (saved export)  vs  examples/prod.env.example
   =  APP_NAME              String        same                     'orders-api'
   ~  DB_PASSWORD           SecureString  differs                  ********
   +  FEATURE_NEW_CHECKOUT  String        only in file             'true'

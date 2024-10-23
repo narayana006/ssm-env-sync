@@ -39,7 +39,7 @@ def run(argv, client):
 
 with mock_aws(), tempfile.TemporaryDirectory() as workdir:
     os.chdir(workdir)
-    shutil.copy(HERE / "prod.env", "prod.env")
+    shutil.copy(HERE / "prod.env.example", "prod.env")
     ssm = boto3.client("ssm")
     for param in json.loads((HERE / "parameters.json").read_text())["Parameters"]:
         ssm.put_parameter(Name=param["Name"], Value=param["Value"], Type=param["Type"])
